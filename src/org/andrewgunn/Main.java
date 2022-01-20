@@ -8,20 +8,52 @@ import java.util.Scanner;
 public class Main {
 
 
+    public static void main(String[] args) {
+        // write your code here
+        Scanner keyboard = new Scanner(System.in);
+
+        List<String> toDoList = new ArrayList<>();
+        String input = "";
+
+        while (!input.toUpperCase().equals("DONE")) {
+            System.out.print("Enter a TO DO list item or DONE>");
+            input = keyboard.nextLine();
+
+            if (!input.equalsIgnoreCase("DONE")) toDoList.add(input);
+        }
+
+        for (String todo : toDoList) System.out.println(todo);
+
+//        int j = Integer.parseInt(keyboard.nextLine());
+//        countUp(j);
+    }
+
+
+    public static void toDoList() {
+        Scanner keyboard = new Scanner(System.in);
+
+        List<String> toDoList = new ArrayList<>();
+        String input = "";
+
+        while (!input.toUpperCase().equals("DONE")) {
+            System.out.print("Enter a TO DO list item or DONE>");
+            input = keyboard.nextLine();
+
+            if (!input.equalsIgnoreCase("DONE")) toDoList.add(input);
+        }
+
+        for (String todo : toDoList) System.out.println(todo);
+    }
     public static void countUp(int max) {
 
+
         if (max > 10 || max < 0) {
-            System.err.println("Error");
+            System.err.println("Error: 1 to 10 only");
         } else {
             for (int i = 0; i <= max; i++) {
                 System.out.printf("# %d\n", i);
             }
         }
-
-    }
-
-    public static void tryItOutCount() {
-
     }
 
     public static void inputOutput() {
@@ -83,10 +115,4 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        // write your code here
-        Scanner keyboard = new Scanner(System.in);
-        int j = Integer.parseInt(keyboard.nextLine());
-        countUp(j);
-    }
 }
